@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 # from blog.views import post_list
-from .views import post_list
+from .views import post_list, post_detail
 
 
 urlpatterns = [
@@ -14,4 +14,9 @@ urlpatterns = [
     # 아래 url함수의 두 번째 인자로 전달
     #  (함수호출 아님)
     url(r'^$', post_list),
+    # ex1) 3/
+    # ex2) 235/
+    # 정규표현식에 그룹을 지정해서 view function의
+    #  인수로 전달한다
+    url(r'^(\d+)/', post_detail),
 ]
