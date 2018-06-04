@@ -11,17 +11,12 @@
 <body>
 	<h1>DjangoGirls Blog</h1>
 
-	<div>
-		<p>published: 04.06.2018, 12:14</p>
-		<h2>My first post</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolor error ex illo incidunt iure labore maxime, officiis pariatur perspiciatis provident quo quos repellat repudiandae sint tempora voluptatem. Dolor error excepturi illum mollitia voluptas! Error pariatur, sed? Cupiditate, dicta, velit!</p>
-	</div>
-
-	<div>
-		<p>published: 04.06.2018, 12:15</p>
-		<h2>My second post</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci architecto asperiores assumenda distinctio eum fuga fugiat iusto labore numquam placeat porro quia quibusdam, quis, reiciendis sapiente tempore, vel voluptatibus.</p>
-	</div>
-	
+	{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.text }}</p>
+		</div>
+	{% endfor %}
 </body>
 </html>
